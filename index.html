@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ricardo Martines | Entrenador Personal</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* --- VARIABLES Y RESETEO --- */
+        :root {
+            --primary-blue: #004aad; /* Azul Vibrante */
+            --dark-blue: #002e6b;
+            --accent-green: #25d366; /* Verde WhatsApp */
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --gold: #ffc107; /* Para las estrellas */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth; /* Desplazamiento suave */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            /* Patrón de fondo estilo "papel milimetrado" sutil */
+            background-image: radial-gradient(var(--primary-blue) 0.5px, transparent 0.5px), radial-gradient(var(--primary-blue) 0.5px, var(--white) 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- ENCABEZADO / HEADER --- */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #4cc9f0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4cc9f0;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 74, 173, 0.85), rgba(0, 46, 107, 0.85)), url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px; 
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-cta {
+            padding: 15px 35px;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255,255,255,0.6);
+        }
+
+        /* --- SECCIONES GENERALES --- */
+        section {
+            padding: 80px 10%;
+            background-color: rgba(255, 255, 255, 0.95);
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--dark-blue);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-blue);
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- SERVICIOS --- */
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 74, 173, 0.15);
+            border-bottom: 5px solid var(--primary-blue);
+        }
+
+        .service-card:hover i {
+            transform: rotateY(360deg);
+            color: #4cc9f0;
+        }
+
+        /* --- TESTIMONIOS (NUEVA SECCIÓN) --- */
+        .testimonials-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 20px; /* Bordes redondeados */
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            position: relative;
+            transition: transform 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 74, 173, 0.15);
+        }
+
+        /* Imagen circular (Bulbosa) */
+        .client-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: -60px auto 15px; /* Saca la imagen hacia arriba */
+            border: 4px solid var(--white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: #ddd;
+        }
+
+        .stars {
+            color: var(--gold);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: var(--dark-blue);
+            display: block;
+        }
+
+        .client-badge {
+            background-color: #e3f2fd;
+            color: var(--primary-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        /* --- SOBRE MÍ --- */
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-text { flex: 1; }
+        .about-image { flex: 1; min-width: 300px; }
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 20px 20px 0 var(--primary-blue);
+        }
+
+        /* --- CONTACTO --- */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .contact-item:hover { transform: translateY(-5px); }
+        .contact-item i { font-size: 1.5rem; color: var(--primary-blue); margin-bottom: 10px; }
+
+        /* BOTÓN DE WHATSAPP */
+        .wsp-button-container { text-align: center; margin-top: 40px; }
+
+        .btn-wsp {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 20px 60px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-wsp.clicked {
+            background-color: var(--accent-green) !important;
+            transform: scale(0.95);
+        }
+
+        .btn-wsp:hover {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+            transform: translateY(-3px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--dark-blue);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            nav { display: none; }
+            .logo { text-align: center; width: 100%; }
+            header { justify-content: center; }
+            section { padding: 60px 5%; }
+            /* Ajuste para testimonios en móvil */
+            .client-img { margin-top: -10px; }
+            .testimonial-card { margin-top: 30px; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado Azul -->
+    <header>
+        <div class="logo">Ricardo <span>Martines</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Transforma tu Cuerpo, <br>Transforma tu Vida</h1>
+            <p>Entrenamiento personalizado de alto nivel diseñado específicamente para tus metas.</p>
+            <a href="#contacto" class="btn-cta">Empieza Ahora</a>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios">
+        <h2 class="section-title">Mis Programas</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Hipertrofia Muscular</h3>
+                <p>Planes detallados para el aumento de masa muscular magra, basados en ciencia.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-running"></i>
+                <h3>Pérdida de Peso</h3>
+                <p>Rutinas metabólicas de alta intensidad para quemar grasa de manera eficiente.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-laptop-medical"></i>
+                <h3>Asesoría Online</h3>
+                <p>Seguimiento 24/7, corrección de técnica por video y ajustes semanales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN NUEVA: TESTIMONIOS (REFERENCIAS) -->
+    <section id="testimonios">
+        <h2 class="section-title">Casos de Éxito</h2>
+        <div class="testimonials-container">
+            
+            <!-- Referencia 1 -->
+            <div class="testimonial-card">
+                <!-- Foto redonda (bulbosa) -->
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos D." class="client-img">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Nunca creí que pudiera bajar de peso sin morirme de hambre. Ricardo me enseñó a comer y a entrenar inteligente. ¡Es un cambio de vida total!"</p>
+                <span class="client-name">Carlos D.</span>
+                <span class="client-badge">Bajó 18kg</span>
+            </div>
+
+            <!-- Referencia 2 -->
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana P." class="client-img">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Llevaba años estancada en el gimnasio. En solo 3 meses con Ricardo logré la definición que busqué por 2 años. Su paciencia es increíble."</p>
+                <span class="client-name">Ana P.</span>
+                <span class="client-badge">Definición Muscular</span>
+            </div>
+
+            <!-- Referencia 3 -->
+            <div class="testimonial-card">
+                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Jorge M." class="client-img">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="testimonial-text">"Entreno desde casa y pensé que no vería resultados. Ricardo diseñó un plan brutal con lo que tenía. La energía que tengo ahora es otra."</p>
+                <span class="client-name">Jorge M.</span>
+                <span class="client-badge">Entrenamiento Online</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Ricardo Martines">
+            </div>
+            <div class="about-text">
+                <h2 class="section-title" style="text-align: left; margin: 0 0 20px 0;">¿Quién es Ricardo Martines?</h2>
+                <p>Soy un entrenador personal certificado con años de experiencia transformando vidas. Mi enfoque no es solo físico, sino mental.</p>
+                <br>
+                <p>Ya sea que busques mejorar tu rendimiento deportivo o simplemente sentirte mejor frente al espejo, tengo el plan ultra detallado que necesitas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto">
+        <h2 class="section-title">Contáctame</h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <h3>Teléfono</h3>
+                <p>+1 829-654-6789</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <h3>Correo</h3>
+                <p>ricardomartines67@gmail.com</p>
+            </div>
+        </div>
+
+        <div class="wsp-button-container">
+            <button id="btnWhatsApp" class="btn-wsp" onclick="contactWhatsApp()">
+                <i class="fab fa-whatsapp"></i> ¡Agenda tu Cita Hoy!
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Ricardo Martines Fitness.</p>
+    </footer>
+
+    <script>
+  function contactWhatsApp() {
+    // 1. Configuración de datos
+    // Formato internacional: 1 (USA/RD) + Número. Sin signos '+' ni guiones.
+    const phone = "18296546789";
+    const message = "Hola Ricardo, vi tus casos de éxito y quiero empezar mi transformación.";
+    
+    // 2. Referencia al botón
+    const btn = document.getElementById('btnWhatsApp');
+    
+    // 3. Efecto visual inmediato
+    btn.classList.add('clicked');
+    btn.innerHTML = '<i class="fab fa-whatsapp"></i> Abriendo...';
+    btn.style.backgroundColor = '#25d366';
+    
+    // 4. Crear la URL
+    // Usamos api.whatsapp.com que suele ser más compatible en todos los dispositivos
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    
+    let url = "";
+    
+    if (isMobile) {
+      // Enlace directo a la App en celulares
+      url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    } else {
+      // Enlace a WhatsApp Web en PC
+      url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+    }
+    
+    // 5. ABRIR INMEDIATAMENTE (Sin esperar, para evitar bloqueo)
+    window.open(url, '_blank');
+    
+    // 6. Restaurar el botón después de unos segundos
+    setTimeout(() => {
+      btn.classList.remove('clicked');
+      btn.style.backgroundColor = '';
+      btn.innerHTML = '<i class="fab fa-whatsapp"></i> ¡Agenda tu Cita Hoy!';
+    }, 3000);
+  }
+</script>
+</body>
+</html>
