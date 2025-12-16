@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- ========== META TAGS BÁSICOS (Esenciales para SEO) ========== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ricardo Martines | Entrenador Personal</title>
+    
+    <!-- TÍTULO: Aparece en la pestaña del navegador y en Google (MAX 60 caracteres recomendado) -->
+    <title>Ricardo Martines | Entrenador Personal Santo Domingo - Transforma Tu Cuerpo</title>
+    
+    <!-- DESCRIPCIÓN: Lo que aparece bajo el link en Google (MAX 160 caracteres) -->
+    <meta name="description" content="Entrenador personal certificado en Santo Domingo. Programas personalizados de hipertrofia, pérdida de peso y asesoría online 24/7. ¡Más de 50 clientes transformados!">
+    
+    <!-- KEYWORDS: Palabras clave (ya no es TAN importante pero ayuda) -->
+    <meta name="keywords" content="entrenador personal Santo Domingo, gym, fitness, hipertrofia, pérdida de peso, entrenamiento online, coach fitness, transformación física">
+    
+    <!-- AUTOR -->
+    <meta name="author" content="Ricardo Martines">
+    
+    <!-- IDIOMA Y REGIÓN -->
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="DO" />
+    <meta name="geo.placename" content="Santo Domingo" />
+    
+    <!-- ========== OPEN GRAPH (Para redes sociales: Facebook, WhatsApp, LinkedIn) ========== -->
+    <!-- Cuando alguien comparte tu link, esto controla cómo se ve la preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ricardomartinescoash.netlify.app/">
+    <meta property="og:title" content="Ricardo Martines | Entrenador Personal - Transforma Tu Cuerpo">
+    <meta property="og:description" content="Programas personalizados de entrenamiento. Hipertrofia, pérdida de peso y asesoría 24/7. ¡Empieza tu transformación hoy!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_DO">
+    
+    <!-- ========== TWITTER CARDS (Para cuando se comparte en Twitter/X) ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ricardomartinescoash.netlify.app/">
+    <meta name="twitter:title" content="Ricardo Martines | Entrenador Personal">
+    <meta name="twitter:description" content="Transforma tu cuerpo con planes personalizados de entrenamiento. Hipertrofia, pérdida de peso y asesoría 24/7.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- ========== CANONICAL URL (Evita contenido duplicado en Google) ========== -->
+    <link rel="canonical" href="https://ricardomartinescoash.netlify.app/">
+    
+    <!-- ========== FAVICON (El icono que aparece en la pestaña) ========== -->
+    <!-- Puedes crear uno gratis en favicon.io y subirlo a tu proyecto -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+    
+    <!-- ========== PRECONNECT (Mejora velocidad de carga de fuentes) ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- Fuentes de Google -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <!-- Iconos de FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -343,10 +391,11 @@
 </head>
 <body>
 
-    <!-- Encabezado Azul -->
+    <!-- ========== HEADER (Etiqueta semántica para SEO) ========== -->
     <header>
         <div class="logo">Ricardo <span>Martines</span></div>
-        <nav>
+        <!-- NAV: Etiqueta semántica para navegación -->
+        <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#servicios">Servicios</a></li>
@@ -356,126 +405,200 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-content">
-            <h1>Transforma tu Cuerpo, <br>Transforma tu Vida</h1>
-            <p>Entrenamiento personalizado de alto nivel diseñado específicamente para tus metas.</p>
-            <a href="#contacto" class="btn-cta">Empieza Ahora</a>
-        </div>
-    </section>
+    <!-- ========== MAIN: Contenido principal (Etiqueta semántica) ========== -->
+    <main>
+        <!-- Hero Section -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <!-- H1: Solo debe haber UNO por página, es el título principal para SEO -->
+                <h1>Transforma tu Cuerpo, <br>Transforma tu Vida</h1>
+                <p>Entrenamiento personalizado de alto nivel diseñado específicamente para tus metas.</p>
+                <a href="#contacto" class="btn-cta" aria-label="Contactar para empezar entrenamiento">Empieza Ahora</a>
+            </div>
+        </section>
 
-    <!-- Servicios -->
-    <section id="servicios">
-        <h2 class="section-title">Mis Programas</h2>
-        <div class="services-container">
-            <div class="service-card">
-                <i class="fas fa-dumbbell"></i>
-                <h3>Hipertrofia Muscular</h3>
-                <p>Planes detallados para el aumento de masa muscular magra, basados en ciencia.</p>
+        <!-- ========== SERVICIOS (ARTICLE: Etiqueta semántica para contenido independiente) ========== -->
+        <section id="servicios">
+            <!-- H2: Estructura jerárquica de títulos (H1 > H2 > H3) es importante para SEO -->
+            <h2 class="section-title">Mis Programas</h2>
+            <div class="services-container">
+                
+                <article class="service-card">
+                    <i class="fas fa-dumbbell" aria-hidden="true"></i>
+                    <h3>Hipertrofia Muscular</h3>
+                    <p>Planes detallados para el aumento de masa muscular magra, basados en ciencia.</p>
+                </article>
+                
+                <article class="service-card">
+                    <i class="fas fa-running" aria-hidden="true"></i>
+                    <h3>Pérdida de Peso</h3>
+                    <p>Rutinas metabólicas de alta intensidad para quemar grasa de manera eficiente.</p>
+                </article>
+                
+                <article class="service-card">
+                    <i class="fas fa-laptop-medical" aria-hidden="true"></i>
+                    <h3>Asesoría Online</h3>
+                    <p>Seguimiento 24/7, corrección de técnica por video y ajustes semanales.</p>
+                </article>
             </div>
-            <div class="service-card">
-                <i class="fas fa-running"></i>
-                <h3>Pérdida de Peso</h3>
-                <p>Rutinas metabólicas de alta intensidad para quemar grasa de manera eficiente.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-laptop-medical"></i>
-                <h3>Asesoría Online</h3>
-                <p>Seguimiento 24/7, corrección de técnica por video y ajustes semanales.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SECCIÓN NUEVA: TESTIMONIOS (REFERENCIAS) -->
-    <section id="testimonios">
-        <h2 class="section-title">Casos de Éxito</h2>
-        <div class="testimonials-container">
+        <!-- ========== TESTIMONIOS ========== -->
+        <section id="testimonios">
+            <h2 class="section-title">Casos de Éxito</h2>
+            <div class="testimonials-container">
+                
+                <!-- ALT TEXT: SÚPER importante para SEO e accesibilidad -->
+                <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                         alt="Carlos D. cliente satisfecho entrenamiento personal" 
+                         class="client-img"
+                         loading="lazy">
+                    <div class="stars" aria-label="Calificación 5 estrellas">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" itemprop="reviewBody">"Nunca creí que pudiera bajar de peso sin morirme de hambre. Ricardo me enseñó a comer y a entrenar inteligente. ¡Es un cambio de vida total!"</p>
+                    <span class="client-name" itemprop="author">Carlos D.</span>
+                    <span class="client-badge">Bajó 18kg</span>
+                </article>
+
+                <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                         alt="Ana P. cliente transformación física" 
+                         class="client-img"
+                         loading="lazy">
+                    <div class="stars" aria-label="Calificación 5 estrellas">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" itemprop="reviewBody">"Llevaba años estancada en el gimnasio. En solo 3 meses con Ricardo logré la definición que busqué por 2 años. Su paciencia es increíble."</p>
+                    <span class="client-name" itemprop="author">Ana P.</span>
+                    <span class="client-badge">Definición Muscular</span>
+                </article>
+
+                <article class="testimonial-card" itemscope itemtype="https://schema.org/Review">
+                    <img src="https://randomuser.me/api/portraits/men/85.jpg" 
+                         alt="Jorge M. entrenamiento online resultados" 
+                         class="client-img"
+                         loading="lazy">
+                    <div class="stars" aria-label="Calificación 5 estrellas">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" itemprop="reviewBody">"Entreno desde casa y pensé que no vería resultados. Ricardo diseñó un plan brutal con lo que tenía. La energía que tengo ahora es otra."</p>
+                    <span class="client-name" itemprop="author">Jorge M.</span>
+                    <span class="client-badge">Entrenamiento Online</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ========== SOBRE MÍ ========== -->
+        <section id="sobre-mi">
+            <div class="about-container">
+                <div class="about-image">
+                    <!-- LOADING LAZY: Carga la imagen solo cuando el usuario hace scroll hasta ella (mejora velocidad) -->
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
+                         alt="Ricardo Martines entrenador personal certificado en gimnasio"
+                         loading="lazy">
+                </div>
+                <div class="about-text">
+                    <h2 class="section-title" style="text-align: left; margin: 0 0 20px 0;">¿Quién es Ricardo Martines?</h2>
+                    <p>Soy un entrenador personal certificado con años de experiencia transformando vidas. Mi enfoque no es solo físico, sino mental.</p>
+                    <br>
+                    <p>Ya sea que busques mejorar tu rendimiento deportivo o simplemente sentirte mejor frente al espejo, tengo el plan ultra detallado que necesitas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CONTACTO ========== -->
+        <section id="contacto">
+            <h2 class="section-title">Contáctame</h2>
             
-            <!-- Referencia 1 -->
-            <div class="testimonial-card">
-                <!-- Foto redonda (bulbosa) -->
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos D." class="client-img">
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt" aria-hidden="true"></i>
+                    <h3>Teléfono</h3>
+                    <!-- ITEMPROP: Microdatos para que Google entienda que esto es un teléfono -->
+                    <p itemprop="telephone">
+                        <a href="tel:+18296546789" style="color: inherit; text-decoration: none;">+1 829-654-6789</a>
+                    </p>
                 </div>
-                <p class="testimonial-text">"Nunca creí que pudiera bajar de peso sin morirme de hambre. Ricardo me enseñó a comer y a entrenar inteligente. ¡Es un cambio de vida total!"</p>
-                <span class="client-name">Carlos D.</span>
-                <span class="client-badge">Bajó 18kg</span>
-            </div>
-
-            <!-- Referencia 2 -->
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Ana P." class="client-img">
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="contact-item">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <h3>Correo</h3>
+                    <p itemprop="email">
+                        <a href="mailto:ricardomartines67@gmail.com" style="color: inherit; text-decoration: none;">ricardomartines67@gmail.com</a>
+                    </p>
                 </div>
-                <p class="testimonial-text">"Llevaba años estancada en el gimnasio. En solo 3 meses con Ricardo logré la definición que busqué por 2 años. Su paciencia es increíble."</p>
-                <span class="client-name">Ana P.</span>
-                <span class="client-badge">Definición Muscular</span>
             </div>
 
-            <!-- Referencia 3 -->
-            <div class="testimonial-card">
-                <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="Jorge M." class="client-img">
-                <div class="stars">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="testimonial-text">"Entreno desde casa y pensé que no vería resultados. Ricardo diseñó un plan brutal con lo que tenía. La energía que tengo ahora es otra."</p>
-                <span class="client-name">Jorge M.</span>
-                <span class="client-badge">Entrenamiento Online</span>
+            <div class="wsp-button-container">
+                <button id="btnWhatsApp" class="btn-wsp" onclick="contactWhatsApp()" aria-label="Contactar por WhatsApp">
+                    <i class="fab fa-whatsapp"></i> ¡Agenda tu Cita Hoy!
+                </button>
             </div>
+        </section>
+    </main>
 
-        </div>
-    </section>
-
-    <!-- Sobre Mí -->
-    <section id="sobre-mi">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Ricardo Martines">
-            </div>
-            <div class="about-text">
-                <h2 class="section-title" style="text-align: left; margin: 0 0 20px 0;">¿Quién es Ricardo Martines?</h2>
-                <p>Soy un entrenador personal certificado con años de experiencia transformando vidas. Mi enfoque no es solo físico, sino mental.</p>
-                <br>
-                <p>Ya sea que busques mejorar tu rendimiento deportivo o simplemente sentirte mejor frente al espejo, tengo el plan ultra detallado que necesitas.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto">
-        <h2 class="section-title">Contáctame</h2>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <i class="fas fa-phone-alt"></i>
-                <h3>Teléfono</h3>
-                <p>+1 829-654-6789</p>
-            </div>
-            <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <h3>Correo</h3>
-                <p>ricardomartines67@gmail.com</p>
-            </div>
-        </div>
-
-        <div class="wsp-button-container">
-            <button id="btnWhatsApp" class="btn-wsp" onclick="contactWhatsApp()">
-                <i class="fab fa-whatsapp"></i> ¡Agenda tu Cita Hoy!
-            </button>
-        </div>
-    </section>
-
+    <!-- ========== FOOTER (Etiqueta semántica) ========== -->
     <footer>
-        <p>&copy; 2023 Ricardo Martines Fitness.</p>
+        <p>&copy; 2024 Ricardo Martines Fitness. Todos los derechos reservados.</p>
+        <p>
+            <a href="#inicio" style="color: white; margin: 0 10px;">Inicio</a> |
+            <a href="#servicios" style="color: white; margin: 0 10px;">Servicios</a> |
+            <a href="#contacto" style="color: white; margin: 0 10px;">Contacto</a>
+        </p>
     </footer>
 
+    <!-- ========== SCHEMA MARKUP / STRUCTURED DATA (JSON-LD) ========== -->
+    <!-- Esto le dice a Google EXACTAMENTE qué tipo de negocio eres -->
+    <!-- Aparecerás en Google Maps, Google My Business, etc. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ricardo Martines Fitness",
+      "image": "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+      "@id": "https://ricardomartinescoash.netlify.app",
+      "url": "https://ricardomartinescoash.netlify.app",
+      "telephone": "+1-829-654-6789",
+      "email": "ricardomartines67@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santo Domingo",
+        "addressCountry": "DO"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 18.4861,
+        "longitude": -69.9312
+      },
+      "priceRange": "$$",
+      "description": "Entrenador personal certificado especializado en hipertrofia muscular, pérdida de peso y asesoría online. Transformaciones reales con más de 50 clientes satisfechos.",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "06:00",
+        "closes": "21:00"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "3"
+      }
+    }
+    </script>
+
+    <!-- ========== JAVASCRIPT FUNCIONAL ========== -->
     <script>
   function contactWhatsApp() {
     // 1. Configuración de datos
-    // Formato internacional: 1 (USA/RD) + Número. Sin signos '+' ni guiones.
     const phone = "18296546789";
     const message = "Hola Ricardo, vi tus casos de éxito y quiero empezar mi transformación.";
     
@@ -488,23 +611,20 @@
     btn.style.backgroundColor = '#25d366';
     
     // 4. Crear la URL
-    // Usamos api.whatsapp.com que suele ser más compatible en todos los dispositivos
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     
     let url = "";
     
     if (isMobile) {
-      // Enlace directo a la App en celulares
       url = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
     } else {
-      // Enlace a WhatsApp Web en PC
       url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
     }
     
-    // 5. ABRIR INMEDIATAMENTE (Sin esperar, para evitar bloqueo)
+    // 5. ABRIR INMEDIATAMENTE
     window.open(url, '_blank');
     
-    // 6. Restaurar el botón después de unos segundos
+    // 6. Restaurar el botón
     setTimeout(() => {
       btn.classList.remove('clicked');
       btn.style.backgroundColor = '';
